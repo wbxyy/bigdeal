@@ -1,0 +1,39 @@
+.layui-footer{
+  text-align: center;
+  font-size: 12px;
+}
+
+.iconfont{
+  margin-right: 8px;
+}
+
+.layui-icon{
+  margin-left:12px;
+}
+
+.user_info{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.layui-side-scroll .user_info{
+  border-bottom: 1px solid #282b33;
+}
+
+.text_avatar{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #329688;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.layui-nav-img{
+  width: 40px;
+  height: 40px;
+}

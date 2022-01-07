@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  font-size: 36px;
+}
+h2{
+  font-size: 28px;
+}
+h3{
+  font-size: 18px;
+}
+h4{
+  font-size: 16px;
+}
+h5{
+  font-size: 14px;
+}
+h6{
+  font-size: 12px;
+}
+
+ul,ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover{
+  color: #666;
+}
+
+input,button{
+  border:none;
+  outline:none;
+}
+
+.clearfix::after,
+.clearfix::before{
+  content:'';
+  display:table;
+}
+
+.clearfix:after{
+  clear:both;
+}

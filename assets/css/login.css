@@ -1,0 +1,58 @@
+/* body{
+  background:url(assets/images/nature-3.jpg) no-repeat;
+  background-size:cover;
+} */
+
+.layui-main{
+  position:relative;
+}
+
+.layui-main .logo{
+  font-size: 60px;
+  margin-top: 10px;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.layui-main .box{
+  background-color: #fff;
+  width: 480px;
+  height: 360px;
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius:8px;
+  padding:0 30px;
+}
+
+.box .title{
+  height: 60px;
+  line-height: 60px;
+  font-weight: 400;
+  color: #3498db;
+  font-size: 32px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.box .register{
+  display: none;
+}
+
+.layui-form-item{
+  position:relative;
+}
+
+.layui-form-item i{
+  position:absolute;
+  top: 10px;
+  left: 10px;
+}
+
+
+.layui-form-item input{
+  padding-left: 30px;
+}
+
+    
