@@ -18,9 +18,8 @@ exports.setToken = (username, user_id) => {
 exports.getToken = (token) => {
   return new Promise((resolve, reject) => {
     if (!token) {
-      console.log('token是空的')
       reject({
-        error: 'token 是空的'
+        message: 'token 是空的'
       })
     } else {
       //第二种  改版后的

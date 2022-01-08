@@ -79,14 +79,14 @@ app.post('/api/login',async (request,response)=>{
   // 获取请求体中的用户名和密码
   // 从db中取出用户数据，判断密码是否正确
   const db = await getDb()
-  const user = db.user.find(item=>item.username = request.body.username)
+  const user = db.user.find(item=>item.username === request.body.username)
   if(!user){
     return response.json({
       status:1,
       message:'要登录的用户不存在'
     }) 
   }
-  if(!user.password === request.body.password){
+  if(user.password !== request.body.password){
     return response.json({
       status:1,
       message:'密码错误'
@@ -94,13 +94,13 @@ app.post('/api/login',async (request,response)=>{
   }
 
   // 生成一个 token 并返回
-  setToken(user.username,user.id).then(token=>{
-    response.json({
-      "status":0,
-      "message":"登录成功",
-      "token": token
-    })
+  const token = await setToken(user.username,user.id)
+  response.json({
+    "status":0,
+    "message":"登录成功",
+    "token": token
   })
+  
 })
 
 //获取用户基本信息
@@ -111,7 +111,6 @@ app.get('/my/userinfo',async (req,res)=>{
     // 解析请求
     const token = req.header('Authorization')
     const info = await getToken(token)
-    console.log(info);
     if(!info){
       return res.status(200).json({
         status:1,
@@ -121,8 +120,7 @@ app.get('/my/userinfo',async (req,res)=>{
     
     // 处理
     const db = await getDb()
-    const user = db.user.find(item=>item.username===info.username && item.password === info.password)
-    console.log(user);
+    const user = db.user.find(item=>item.username===info.user_name && item.id === info.user_id)
     if(!user){
       return res.status(200).json({
         status:1,
@@ -136,8 +134,9 @@ app.get('/my/userinfo',async (req,res)=>{
       data:user
     })
   }catch(e){
-    res.status(500).json({
-      error:e.message
+    res.status(200).json({
+      status:1,
+      message:e.message
     })
   }
 })

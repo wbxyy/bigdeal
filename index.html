@@ -35,7 +35,7 @@
         </dl>
       </li>
       <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-        <a href="javascript:;">
+        <a href="javascript:;" class="logout" >
           <span class="iconfont icon-shouye1"></span>退出
         </a>
       </li>
@@ -48,11 +48,11 @@
       <div class="user_info">
         <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
         <span class="text_avatar">A</span>
-        欢迎你 ***
+        <span id="welcome">haha</span>
       </div>
       
       <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
-        <li class="layui-nav-item"><a href="javascript:;"><span class="iconfont icon-shouye"></span>首页</a></li>
+        <li class="layui-nav-item layui-this"><a href="home/dashboard.html" target="fm"><span class="iconfont icon-shouye"></span>首页</a></li>
         <li class="layui-nav-item">
           <a class="" href="javascript:;"><span class="iconfont icon-comment"></span>文章管理</a>
           <dl class="layui-nav-child">
@@ -76,7 +76,15 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+    <iframe src="home/dashboard.html" name="<div class="mb-3">
+      <label for="" class="form-label"></label>
+      <select multiple class="form-select" name="" id="">
+        <option selected>Select one</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+    </div>" frameborder="0"></iframe>
   </div>
   
   <div class="layui-footer">
@@ -87,6 +95,9 @@
 
   <!-- 引入jq -->
   <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <!-- 引入jq的ajax拦截器 -->
+  <script src="assets/js/ajaxPrefilter.js"></script>
   
   <!-- 引入layui -->
   <script src="assets/lib/layui/layui.js"></script>

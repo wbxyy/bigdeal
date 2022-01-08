@@ -50,7 +50,7 @@ $(function(){
    
     $.ajax({
       method:'POST',
-      url:'http://localhost:4000/api/reguser',
+      url:'/api/reguser',
       // url:'http://localhost:4000/test',
       data:data,
       success:function(res){
@@ -71,7 +71,7 @@ $(function(){
     const data = $(this).serialize()
     $.ajax({
       method:'POST',
-      url:'http://localhost:4000/api/login',
+      url:'/api/login',
       data,
       success:function(res){
         if(res.status !== 0){
@@ -79,6 +79,7 @@ $(function(){
         }
         localStorage.setItem('token',res.token)
         layui.layer.msg(res.message)
+        location.href='index.html'
       }
     })
   })
