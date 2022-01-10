@@ -7,8 +7,6 @@
   <title>后台首页</title>
   <meta name="description" content="后台首页">
   <meta name="keywords" content="后台首页">
-  <!-- 导入初始化样式 -->
-  <link rel="stylesheet" href="assets/css/base.css">
   <!-- 导入layui样式 -->
   <link rel="stylesheet" href="assets/lib/layui/css/layui.css"> 
   <!-- 导入自己的样式 -->
@@ -62,11 +60,11 @@
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
+          <a href="javascript:;"><span class="iconfont icon-user"><japan>个人中心</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;"><i class="layui-icon layui-icon-survey"></i> 基本资料</a></dd>
+            <dd><a href="user/profile.html" target="fm"><i class="layui-icon layui-icon-survey"></i> 基本资料</a></dd>
             <dd><a href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i> 更换头像</a></dd>
-            <dd><a href="javascript:;"><i class="layui-icon layui-icon-util"></i> 重置密码</a></dd>
+            <dd><a href="user/password.html" target="fm"><i class="layui-icon layui-icon-util"></i> 重置密码</a></dd>
           </dl>
         </li>
         
@@ -76,15 +74,7 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <iframe src="home/dashboard.html" name="<div class="mb-3">
-      <label for="" class="form-label"></label>
-      <select multiple class="form-select" name="" id="">
-        <option selected>Select one</option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
-    </div>" frameborder="0"></iframe>
+    <iframe src="home/dashboard.html" name="fm"></iframe>
   </div>
   
   <div class="layui-footer">

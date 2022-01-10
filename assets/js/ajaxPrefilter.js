@@ -9,13 +9,15 @@ $.ajaxPrefilter(function(config){
     config.headers = {
       "Authorization":localStorage.getItem('token') || ''
     }
-  }
 
-  config.complete = function(res){
-    console.log(res);
-    if(res.responseJSON.status !== 0 ){
-      localStorage.removeItem('token')
-      location.href = 'login.html'
+    config.complete = function(xhr){
+      console.log(xhr);
+      // if(xhr.responseJSON.status !== 0){
+      //   localStorage.removeItem('token')
+      //   location.href = '/login.html'
+      // } 
     }
   }
+
+  
 })
