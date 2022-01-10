@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>更换头像</title>
+  <!-- 导入基础样式 -->
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <!-- 导入layui样式 -->
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css"> 
+  <!-- 导入cropper的样式 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.min.css" rel="stylesheet">
+  <!-- 导入自己的样式 -->
+  <link rel="stylesheet" href="/assets/css/user/avatar.css">
+
+</head>
+<body>
+  <div class="layui-card">
+    <div class="layui-card-header">更换头像</div>
+    <div class="layui-card-body clearfix">
+        <div class="cropper_box">
+          <div class="img_box">
+            <img id="avatar" src="../assets/images/nature-1.jpg" alt="">
+          </div>
+          <div class="preview_container">
+            <div class="preview_box ">
+              <div class="preview w100"></div>
+              100 x 100
+            </div>
+            <div class="preview_box ">
+              <div class="preview w50"></div>
+              50 x 50
+            </div>
+          </div>
+        </div>
+        
+        <div class="btn_group">
+          <button class="layui-btn layui-btn-primary btn_upload" >上传</button>
+          <button class="layui-btn layui-btn-danger btn_confirm">确定</button>
+          <input type="file" accept="image/png image/jpeg" style="display: none;">
+        </div>
+    </div>
+  </div>
+  <!-- 引入jq -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <!-- 引入jq的ajax拦截器 -->
+  <script src="/assets/js/ajaxPrefilter.js"></script>
+
+  <!-- 导入cropper的js -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.min.js"></script>
+
+  <!-- 导入copper中间件 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.min.js"></script>
+  
+  <!-- 引入layui -->
+  <script src="/assets/lib/layui/layui.js"></script>
+
+  <!-- 引入自己的js文件 -->
+  <script src="/assets/js/user/avatar.js"></script>
+ 
+</body>
+</html>
