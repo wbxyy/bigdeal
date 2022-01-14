@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章列表</title>
+  <meta name="description" content="文章列表">
+  <meta name="keywords" content="文章列表">
+   <!-- 导入基础样式 -->
+   <link rel="stylesheet" href="/assets/css/base.css">
+   <!-- 导入layui样式 -->
+   <link rel="stylesheet" href="/assets/lib/layui/css/layui.css"> 
+   <!-- 导入自己的样式 -->
+   <link rel="stylesheet" href="/assets/css/article/art_list.css">
+
+</head>
+<body>
+  <div class="layui-card">
+    <div class="layui-card-header">文章列表</div>
+    <div class="layui-card-body">
+      <!-- 筛选区 -->
+      <form class="layui-form" id="search_form">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <select name="cate_id">
+              <option value="">全部分类</option>
+              <option value="021">上海</option>
+              <option value="0571">杭州</option>
+            </select>
+          </div>
+          <div class="layui-inline">
+            <select name="state">
+              <option value="">全部状态</option>
+              <option value="已发布">已发布</option>
+              <option value="草稿">草稿</option>
+            </select>  
+          </div>
+          <div class="layui-inline">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+          </div>
+        </div>
+      </form>
+      <!-- 列表区 -->
+      <table class="layui-table">
+        <colgroup>
+          <col>
+          <col width="150">
+          <col width="200">
+          <col width="150">
+          <col width="200">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>文章标题</th>
+            <th>分类</th>
+            <th>文章发布时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr> 
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+      <!-- 分页区 -->
+      <div id="pagination"></div>
+    </div>
+  </div>
+
+  <!-- 分类下拉框模板 -->
+  <script type="text/html" id="tmp_select">
+    <option value="">全部分类</option>
+    {{each data}}
+    <option value="{{$value.id}}">{{$value.name}}</option>
+    {{/each}}
+  </script>
+
+  <!-- tbody模板 -->
+  <script type="text/html" id='tmp_tbody'>
+    {{each data}}
+    <tr>
+      <td>{{$value.title}}</td>
+      <td>{{$value.cate_name}}</td>
+      <td>{{$value.pub_date|dateFormat}}</td>
+      <td>{{$value.state}}</td>
+      <td> 
+        <button type="button" class="layui-btn layui-btn-primary edit_btn" data-id="{{$value.id}}">编辑</button>
+        <button type="button" class="layui-btn layui-btn-danger del_btn" data-id="{{$value.id}}">删除</button>
+      </td>
+    </tr>
+    {{/each}}
+  </script>
+
+
+  <!-- 引入jq -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <!-- 引入jq的ajax拦截器 -->
+  <script src="/assets/js/ajaxPrefilter.js"></script>
+
+  <!-- 引入art-template 模板解析器-->
+  <script src="https://cdn.bootcdn.net/ajax/libs/art-template/4.13.2/lib/template-web.min.js"></script>
+  
+  <!-- 引入layui -->
+  <script src="/assets/lib/layui/layui.js"></script>
+
+  <!-- 引入自己的js文件 -->
+  <script src="/assets/js/article/art_list.js"></script>
+</body>
+</html>

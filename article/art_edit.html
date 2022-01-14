@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>编辑文章</title>
+  <meta name="description" content="发布文章">
+  <meta name="keywords" content="发布文章">
+  <!-- 导入基础样式 -->
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <!-- 导入layui样式 -->
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css"> 
+  <!-- 导入cropper的样式 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.min.css" rel="stylesheet">
+  <!-- 导入自己的样式 -->
+  <link rel="stylesheet" href="/assets/css/article/art_edit.css">
+</head>
+<body>
+  
+  <div class="layui-card">
+    <div class="layui-card-header">编辑文章</div>
+    <div class="layui-card-body">
+      <!-- 不想改id -->
+      <form class="layui-form" lay-filter="form_edit" id="form_pub">
+        <input type="hidden" name="id" value="">
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章标题</label>
+          <div class="layui-input-block">
+            <input type="text" name="title" required  lay-verify="required" placeholder="请输入文章标题" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章类别</label>
+          <div class="layui-input-block">
+            <select name="cate_id" lay-verify="required">
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章内容</label>
+          <div class="layui-input-block">
+            <textarea name="content"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章封面</label>
+          <div class="layui-input-block">
+            <div class="box">
+              <div class="left">
+                <div class="img_box">
+                  <img id="cover" src="../assets/images/nature-1.jpg" alt="">
+                </div>
+              </div>
+              <div class="right">
+                <div class="preview"></div>
+                <button type="button" class="layui-btn layui-btn-danger btn_upload">更换封面</button>
+                <input type="file" accept="image/png;image/jpeg;image/gif" style="display: none;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">提交编辑</button>
+            <button class="layui-btn layui-btn-primary" lay-submit lay-filter="formDemo" id="submit2">修改为草稿</button>
+            <button type="reset" class="layui-btn layui-btn-warm" id="btnReset">重置</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/html" id="tmp-cate">
+    <option value="">请选择文章分类</option>
+    {{each data}}
+    <option value="{{$value.id}}">{{$value.name}}</option>
+    {{/each}}
+  </script>
+
+  <!-- 引入jq -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <!-- 引入jq的ajax拦截器 -->
+  <script src="/assets/js/ajaxPrefilter.js"></script>
+
+  <!-- 引入art-template 模板解析器-->
+  <script src="https://cdn.bootcdn.net/ajax/libs/art-template/4.13.2/lib/template-web.min.js"></script>
+
+  <!-- 引入富文本(cdn太慢了) -->
+  <script src="/assets/lib/tinymce/tinymce.min.js"></script>
+
+  <!-- 引入富文本初始化函数 -->
+  <script src="/assets/js/utils/initEditor.js"></script>
+
+  <!-- 导入cropper的js -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.min.js"></script>
+
+  <!-- 导入copper中间件 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.min.js"></script>
+
+  <!-- 引入layui -->
+  <script src="/assets/lib/layui/layui.js"></script>
+
+  <!-- 引入自己的js文件 -->
+  <script src="/assets/js/article/art_edit.js"></script>
+</body>
+</html>

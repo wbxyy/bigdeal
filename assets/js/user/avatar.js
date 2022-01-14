@@ -1,11 +1,17 @@
 $(function(){
+  // 初始化截图操作区默认图片为当前头像的base64
+  const $img = window.parent.document.querySelector('.user_info img')
+  $('#avatar').attr('src',$img.src)
+
+
   // 初始化cropper
   // 2.配置选项
   const options = {
     //纵横比
     aspectRatio: 1/1,
     //指定预览区域(类名)
-    preview:'.preview'
+    preview:'.preview',
+    viewMode:2
   }
   // 3.创建裁剪区域
   $('#avatar').cropper(options) 
@@ -22,7 +28,7 @@ $(function(){
       return layui.layer.msg('请选择文件')
     }
 
-    const file = e.target.files[0]
+    const file = e.target.files[0]  
 
     //生成图片url
 

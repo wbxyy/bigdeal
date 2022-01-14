@@ -11,7 +11,7 @@ $.ajaxPrefilter(function(config){
     }
 
     config.complete = function(xhr){
-      console.log(xhr);
+      // console.log(xhr);
       // if(xhr.responseJSON.status !== 0){
       //   localStorage.removeItem('token')
       //   location.href = '/login.html'
