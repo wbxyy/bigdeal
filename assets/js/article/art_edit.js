@@ -96,7 +96,7 @@ $(function(){
       height:180
     }).toBlob(function(blob){
       fd.append('cover_img',blob)
-      //发送新增文章请求
+      //发送编辑文章请求
       editArticle(fd)
     })
   })
@@ -134,15 +134,9 @@ function renderForm(){
       layui.layer.msg(res.message)
       console.log(res.data);
 
-      //渲染的封面
-      // if(res.data.cover_img){
-      //   const $img = $('#cover')
-      //   const imgURL = URL.createObjectURL(new Blob([res.data.cover_img],{type:'image/png'}))
-      //   console.log(imgURL);
-      //   $img.cropper('destroy').attr('src',imgURL).cropper(options)
-      // }
-      
-
+      // 渲染文章封面
+      // 暂时不知道怎么配置项目的后端服务器主机
+      //$('#cover').prop('src',res.data.cover_img`)
       
       //表单基本内容
       layui.form.val('form_edit',res.data)

@@ -5,9 +5,9 @@ $(function(){
       if(!/^\S{6,12}$/.test(value)){
         return '密码必须6-12位'
       }
-      if(!/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])\S+$/.test(value)){
-        return '密码必须包含大小写，数字，不能有空格'
-      }
+      // if(!/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])\S+$/.test(value)){
+      //   return '密码必须包含大小写，数字，不能有空格'
+      // }
     },
     newpwd:function(value){
       if(value === $('[name=oldPwd]').val()){
@@ -22,7 +22,7 @@ $(function(){
   })
 
   //提交修改
-  $('#mybtnSubmit').submit(function(e){
+  $('#passwordForm').submit(function(e){
     e.preventDefault();
     const data = $('[lay-filter=formPassword]').serialize()
     console.log(data);

@@ -18,6 +18,7 @@ $(function(){
     initUserInfo()
   })
 
+  //修改用户信息
   $('#mybtnSubmit').click(function(e){
     e.preventDefault();
     //获取表单数据
@@ -34,7 +35,7 @@ $(function(){
           return layui.layer.msg(res.message)
         }
         layui.layer.msg(res.message)
-        window.parent.renderAvatar(res.data)
+        initUserInfo()
         //回填表单数据
         layui.form.val('formUserInfo',res.data)
         
@@ -65,10 +66,9 @@ function initUserInfo(){
       if(res.status !== 0){
         return layui.layer.msg(res.message)
       }
-      console.log(res);
       //回填表单数据
       layui.form.val('formUserInfo',res.data)
-      
+      window.parent.renderAvatar(res.data)
     }
   })
 }

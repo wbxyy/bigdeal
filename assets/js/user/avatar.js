@@ -1,7 +1,9 @@
 $(function(){
   // 初始化截图操作区默认图片为当前头像的base64
-  const $img = window.parent.document.querySelector('.user_info img')
-  $('#avatar').attr('src',$img.src)
+  // const $img = window.parent.document.querySelector('.user_info img')
+  // $('#avatar').attr('src',$img.src)
+
+  // 初始化截图操作区默认图片为静态资源图片
 
 
   // 初始化cropper
@@ -9,9 +11,10 @@ $(function(){
   const options = {
     //纵横比
     aspectRatio: 1/1,
-    //指定预览区域(类名)
+    //指定预览区域(类名):
     preview:'.preview',
-    viewMode:2
+    viewMode:2,
+    zoomable:false
   }
   // 3.创建裁剪区域
   $('#avatar').cropper(options) 

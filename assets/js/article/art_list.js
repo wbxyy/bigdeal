@@ -76,7 +76,7 @@ function getArticleCate(){
       if(res.status !== 0){
         return layui.layer.msg(res.message)
       }
-      layui.layer.msg(res.message)
+      //layui.layer.msg(res.message)
       const htmlstr = template('tmp_select',res)
       $('[name=cate_id]').html(htmlstr)
       layui.form.render()

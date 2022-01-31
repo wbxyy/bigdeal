@@ -18,9 +18,9 @@ $(function(){
       if(!/^\S{6,12}$/.test(value)){
         return '密码必须6-12位'
       }
-      if(!/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])\S+$/.test(value)){
-        return '密码必须包含大小写，数字，不能有空格'
-      }
+      // if(!/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])\S+$/.test(value)){
+      //   return '密码必须包含大小写，数字，不能有空格'
+      // }
     },
     repwd:function(value,item){
       //通过选择器拿到密码框的值，然后进行比较是否一致
